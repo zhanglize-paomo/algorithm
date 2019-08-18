@@ -6,3 +6,5 @@ src/main/resources/
 src/test/
 target/
 .class
+classes/
+src/main/java/
