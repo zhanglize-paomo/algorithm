@@ -19,7 +19,7 @@ public class Algorithm {
         //获取随机的数组信息
         int[] num = buildNums();
         //快速找到一个数组中的俩个数字,让这俩个数字之和等于一个给定的值
-        array(num,100,2);
+        System.out.println(array(num,100,2));
     }
 
     /**
@@ -28,7 +28,7 @@ public class Algorithm {
     private static int[] buildNums() {
         int[] nums = new int[100];
         for (int i = 0; i < 100; i++) {
-            nums[i] = random.nextInt(-100, 100);
+            nums[i] = random.nextInt(0, 100);
         }
         Arrays.sort(nums);
         return nums;
