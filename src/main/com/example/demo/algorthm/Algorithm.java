@@ -1,4 +1,4 @@
-package com.example.demo.MyList;
+package com.example.demo.algorthm;
 
 import java.util.ArrayList;
 import java.util.Arrays;
