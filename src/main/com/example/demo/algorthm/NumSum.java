@@ -9,6 +9,11 @@ import static java.util.Collections.singletonList;
 /**
  * 寻找几个数之和从 m 个数中寻找 n 个和为 sum 的索引
  *
+ * 实现--从长度为n的数组(元素互不相同)中任意选择m个数的所有组合
+ * 1.手动输入数组的长度
+ * 2.手动输入组合的个数
+ * 3.随机数生成一个数组
+ * 4.在构建数组时要对数组中的元素进行判断,保证新生成的数组与之前的数不同
  * @author zhanglize
  * @create 2019/8/19
  */
@@ -18,9 +23,9 @@ public class NumSum {
 
     public static void main(String[] args) {
         //获取随机数组
-        int[] nums = hashSet(buildNums());
-        List<int[]> idxs = compute(nums, 2, 100);
-
+        int[] nums = buildNums();
+        List<int[]> idxs = compute(nums,3, 100);
+        System.out.println(idxs.size());
         idxs.forEach(is -> {
             StringJoiner sj = new StringJoiner(", ", "[", "]");
             for (int i : is) {
@@ -73,7 +78,6 @@ public class NumSum {
         for (int i = start; i <= stop - size; i++) {
             list = plus(list, size == 1 ? (nums[i] == sum ? singletonList(new int[]{i}) : emptyList()) :
                     multi(Arrays.asList(new int[]{i}), compute(nums, i + 1, stop, size - 1, sum - nums[i])));
-
         }
         return list;
     }
@@ -121,7 +125,7 @@ public class NumSum {
     private static int[] buildNums() {
         int[] nums = new int[100];
         for (int i = 0; i < 100; i++) {
-            nums[i] = random.nextInt(-100, 100);
+            nums[i] = random.nextInt(0, 100);
         }
         Arrays.sort(nums);
         return nums;
