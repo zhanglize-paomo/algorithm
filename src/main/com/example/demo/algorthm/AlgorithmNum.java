@@ -90,16 +90,10 @@ public class AlgorithmNum {
             return 0;
         }
         int count = 0;
-        //获取数组的大小
-        int[] num = new int[arr.length];
         for (int i = 0; i < k; i++) {
             count += arr[i];
-            //往数组中添加数据
-            num[i] = arr[i];
         }
-        List<int[]> list = new ArrayList<>();
         if (count == sum) {
-            list.add(num);
             return 1;
         }
         return 0;
