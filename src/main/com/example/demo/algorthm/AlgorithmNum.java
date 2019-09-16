@@ -22,6 +22,11 @@ public class AlgorithmNum {
         int[] num = hashSet(buildNums());
         int count = solution(num, num.length - 1, 3, 10);
         System.out.println(count);
+
+        Thread thread = new Thread();
+        thread.start();
+        thread.run();
+
     }
 
     private static int[] hashSet(int[] ints) {
